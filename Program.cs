@@ -9,8 +9,13 @@ namespace Udemy_Console
     {
         //private readonly CalculoService _CalculoService;
 
+        //public Program(CalculoService calculoService)
+        //{
+        //    _CalculoService = calculoService;
+        //}
+
         public static void Main()
-        {
+        {            
             var MyClass = new Program();
             Console.WriteLine("Bem vindo Dev!");
             Console.WriteLine("Qual é o seu nome?");
@@ -26,8 +31,9 @@ namespace Udemy_Console
             Console.WriteLine("__________________________________________");
 
             if (decisaoDeIniciar == 1)
-            {
+            {                
                 Console.WriteLine("Que legal!");
+                Thread.Sleep(1000);
                 MyClass.ChamarMetodos();                
             }
             else
