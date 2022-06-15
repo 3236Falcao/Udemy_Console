@@ -1,10 +1,18 @@
 ﻿using Servico;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
 namespace Udemy_Console
 {
+    //Criação de variavel global
+    //Instancia a variavel global
+
+    //public static class Global
+    //{
+    //    public static List<string> listaResultados = new List<string>();
+    //}
     public class Program
     {
         //private readonly CalculoService _CalculoService;
@@ -15,7 +23,8 @@ namespace Udemy_Console
         //}
 
         public static void Main()
-        {            
+        {
+            List<string> listaResultados = new List<string>();
             var MyClass = new Program();
             Console.WriteLine("Bem vindo Dev!");
             Console.WriteLine("Qual é o seu nome?");
@@ -34,7 +43,7 @@ namespace Udemy_Console
             {                
                 Console.WriteLine("Que legal!");
                 Thread.Sleep(1000);
-                MyClass.ChamarMetodos();                
+                MyClass.ChamarMetodos(listaResultados);                
             }
             else
             {
@@ -43,9 +52,11 @@ namespace Udemy_Console
             }            
         }
 
-        public void ChamarMetodos()
+        public void ChamarMetodos(List<string> listaResultados)
         {
-            Console.Clear();
+           
+            //Console.Clear();            
+            string mensagem = "";
             int valor = 0;
             int recebeOpcao = 0;
             var MyClass = new Program();
@@ -65,33 +76,36 @@ namespace Udemy_Console
             Console.WriteLine("__________________________________________");
 
             do
-            {             
+            {
+                
                 if (recebeOpcao == 1)
                 {
                     valor = MyClass.SomarNumeros(valor1, valor2);
-                    Console.WriteLine("A soma de " + valor1 + " + " + valor2 + " é igual a " + (valor));
-                    
+                    mensagem = "A soma de " + valor1 + " + " + valor2 + " é igual a " + (valor);
                 }
-                if (recebeOpcao == 2)
+                else if (recebeOpcao == 2)
                 {
                     valor = MyClass.SubtrairNumeros(valor1, valor2);
-                    Console.WriteLine("A subtração de " + valor1 + " - " + valor2 + " é igual a " + (valor));
+                    mensagem = "A subtração de " + valor1 + " - " + valor2 + " é igual a " + (valor);
                 }
-                if (recebeOpcao == 3)
+                else if (recebeOpcao == 3)
                 {
                     valor = MyClass.MultiplicarNumeros(valor1, valor2);
-                    Console.WriteLine("A multiplicação de " + valor1 + " x " + valor2 + " é igual a " + (valor)); 
+                    mensagem = "A multiplicação de " + valor1 + " x " + valor2 + " é igual a " + (valor);
                 }
-                if (recebeOpcao == 4)
+                else if (recebeOpcao == 4)
                 {
-                    valor = MyClass.DividirNumeros(valor1, valor2);                    
-                    Console.WriteLine("A divisão de " + valor1 + " / " + valor2 + " é igual a " + (valor));                                    
-                   
+                    valor = MyClass.DividirNumeros(valor1, valor2);
+                    mensagem = "A divisão de " + valor1 + " / " + valor2 + " é igual a " + (valor);
                 }
                 if (recebeOpcao <= 0 || recebeOpcao > 4)
                 {
-                    Console.WriteLine(recebeOpcao + " é uma opção inválida!");                 
+                    mensagem = recebeOpcao + " é uma opção inválida!";
                 }
+
+                Console.WriteLine(mensagem);
+                listaResultados.Add(mensagem);
+
                 
                 Console.WriteLine("__________________________________________");              
 
@@ -108,16 +122,20 @@ namespace Udemy_Console
 
                     //Sleep: bloqueia o thread principal por 1segundo
                     Thread.Sleep(1000);
-                    ChamarMetodos();
+                    ChamarMetodos(listaResultados);
                 }
                 else
                 {
+                    Console.WriteLine("__________________________________________");
+                    Console.WriteLine("__________________________________________");
+                    listaResultados.ForEach(i => Console.WriteLine(i));
+                    //Console.WriteLine(listaResultados);
                     Console.WriteLine("Que pena , então vamos deixar para a próxima.");
 
                     //Environment: Encerra o processo "decisaoDeContinuar" e retorna um código de saída para o sistema operacional.
                     Environment.Exit(decisaoDeContinuar);
                 }                               
-                ChamarMetodos();
+                ChamarMetodos(listaResultados);
 
             } while (recebeOpcao >= 1 || recebeOpcao <= 4);            
         }
