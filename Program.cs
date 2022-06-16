@@ -24,12 +24,13 @@ namespace Udemy_Console
 
         public static void Main()
         {
+
             List<string> listaResultados = new List<string>();
             var MyClass = new Program();
             Console.WriteLine("Bem vindo Dev!");
             Console.WriteLine("Qual é o seu nome?");
             string nome = Console.ReadLine();
-            Console.WriteLine("__________________________________________");            
+            Console.WriteLine("__________________________________________");
             Console.WriteLine("Olá " + nome + ", Vamos jogar?");
             Console.WriteLine("__________________________________________");
 
@@ -40,27 +41,27 @@ namespace Udemy_Console
             Console.WriteLine("__________________________________________");
 
             if (decisaoDeIniciar == 1)
-            {                
+            {
                 Console.WriteLine("Que legal!");
                 Thread.Sleep(1000);
-                MyClass.ChamarMetodos(listaResultados);                
+                MyClass.ChamarMetodos(listaResultados);
             }
             else
             {
                 Console.WriteLine("Que pena , então vamos deixar para a próxima.");
                 Environment.Exit(decisaoDeIniciar);
-            }            
+            }
         }
 
         public void ChamarMetodos(List<string> listaResultados)
         {
-           
+
             //Console.Clear();            
             string mensagem = "";
             int valor = 0;
             int recebeOpcao = 0;
             var MyClass = new Program();
-          
+
             Console.WriteLine("Digite dois numeros");
             int valor1 = int.Parse(Console.ReadLine());
             int valor2 = int.Parse(Console.ReadLine());
@@ -77,7 +78,7 @@ namespace Udemy_Console
 
             do
             {
-                
+
                 if (recebeOpcao == 1)
                 {
                     valor = MyClass.SomarNumeros(valor1, valor2);
@@ -106,8 +107,8 @@ namespace Udemy_Console
                 Console.WriteLine(mensagem);
                 listaResultados.Add(mensagem);
 
-                
-                Console.WriteLine("__________________________________________");              
+
+                Console.WriteLine("__________________________________________");
 
                 Console.WriteLine("Vamos continuar brincando?");
                 Console.WriteLine("Escolha uma opção:");
@@ -127,17 +128,18 @@ namespace Udemy_Console
                 else
                 {
                     Console.WriteLine("__________________________________________");
-                    Console.WriteLine("__________________________________________");
+                    Console.WriteLine("O seu histórico de contas é: ");
                     listaResultados.ForEach(i => Console.WriteLine(i));
                     //Console.WriteLine(listaResultados);
+                    Console.WriteLine("__________________________________________");
                     Console.WriteLine("Que pena , então vamos deixar para a próxima.");
 
                     //Environment: Encerra o processo "decisaoDeContinuar" e retorna um código de saída para o sistema operacional.
                     Environment.Exit(decisaoDeContinuar);
-                }                               
+                }
                 ChamarMetodos(listaResultados);
 
-            } while (recebeOpcao >= 1 || recebeOpcao <= 4);            
+            } while (recebeOpcao >= 1 || recebeOpcao <= 4);
         }
 
         public int SomarNumeros(int numero1, int numero2)
@@ -148,21 +150,21 @@ namespace Udemy_Console
 
         public int SubtrairNumeros(int numero1, int numero2)
         {
-            var resultadoSoma = (numero1 - numero2);
-            return resultadoSoma;
+            var resultadoSubtracao = (numero1 - numero2);
+            return resultadoSubtracao;
         }
 
         public int MultiplicarNumeros(int numero1, int numero2)
         {
-            var resultadoSoma = (numero1 * numero2);
-            return resultadoSoma;
+            var resultadoMultiplicao = (numero1 * numero2);
+            return resultadoMultiplicao;
         }
 
         public int DividirNumeros(int numero1, int numero2)
         {
-            var resultadoSoma = (numero1 / numero2);
-            return resultadoSoma;
+            var resultadoDivisao = (numero1 / numero2);
+            return resultadoDivisao;
         }
-        
+
     }
 }
