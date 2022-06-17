@@ -48,7 +48,7 @@ namespace Udemy_Console
             }
             else
             {
-                Console.WriteLine("Que pena , então vamos deixar para a próxima.");
+                Console.WriteLine("Que pena , então vamos deixar para a próxima.");                
                 Environment.Exit(decisaoDeIniciar);
             }
         }
@@ -126,14 +126,22 @@ namespace Udemy_Console
                     ChamarMetodos(listaResultados);
                 }
                 else
-                {
-                    Console.WriteLine("__________________________________________");
-                    Console.WriteLine("O seu histórico de contas é: ");
-                    listaResultados.ForEach(i => Console.WriteLine(i));
+                {                    
+                    //Console.WriteLine("O seu histórico de contas é: ");
+                    //listaResultados.ForEach(i => Console.WriteLine(i));
                     //Console.WriteLine(listaResultados);
                     Console.WriteLine("__________________________________________");
                     Console.WriteLine("Que pena , então vamos deixar para a próxima.");
+                    Console.WriteLine("__________________________________________");
+                    Console.WriteLine("A quantidade de contas realizadas foi: " + listaResultados.Count);
+                    Console.WriteLine("");
+                    Console.WriteLine("Lista de contas: ");
 
+                    for (int i = 0; i < listaResultados.Count; i++)
+                    {
+                        //Console.WriteLine(i + " - " + listaResultados[i].NomeConta + " - " + listaResultados[i].TempoIdeal + " - " + listaResultados[i].TempoReal);                
+                        Console.WriteLine(i + " - " + listaResultados[i]);
+                    }
                     //Environment: Encerra o processo "decisaoDeContinuar" e retorna um código de saída para o sistema operacional.
                     Environment.Exit(decisaoDeContinuar);
                 }
