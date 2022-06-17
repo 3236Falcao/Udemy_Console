@@ -57,15 +57,19 @@ namespace Udemy_Console
         public void ChamarMetodos(List<string> listaResultados)
         {
 
-            //Console.Clear();            
+            Console.Clear();            
             string mensagem = "";
             int valor = 0;
-            int recebeOpcao = 0;
+            int recebeOpcao = 0;            
             var MyClass = new Program();
-
+            //Console.WriteLine("Conta " + (i + 1) + " - " + "Digite dois numeros");
+            //Adicionado contador
+            Console.WriteLine("conta " + (listaResultados.Count + 1));
             Console.WriteLine("Digite dois numeros");
             int valor1 = int.Parse(Console.ReadLine());
             int valor2 = int.Parse(Console.ReadLine());
+
+            
 
             Console.WriteLine("Você digitou " + valor1 + " e " + valor2);
             Console.WriteLine("__________________________________________");
@@ -111,8 +115,8 @@ namespace Udemy_Console
                 {
                     Console.WriteLine(mensagem);
                     listaResultados.Add(mensagem);
-                }
-                 
+                }               
+
                 Console.WriteLine("__________________________________________");
 
                 Console.WriteLine("Vamos continuar brincando?");
@@ -127,14 +131,12 @@ namespace Udemy_Console
                     Console.WriteLine("__________________________________________");
 
                     //Sleep: bloqueia o thread principal por 1segundo
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
+                    Console.Clear();
                     ChamarMetodos(listaResultados);
                 }
                 else
-                {                    
-                    //Console.WriteLine("O seu histórico de contas é: ");
-                    //listaResultados.ForEach(i => Console.WriteLine(i));
-                    //Console.WriteLine(listaResultados);
+                {                                        
                     Console.WriteLine("__________________________________________");
                     Console.WriteLine("Que pena , então vamos deixar para a próxima.");
                     Console.WriteLine("__________________________________________");
@@ -145,7 +147,7 @@ namespace Udemy_Console
                     for (int i = 0; i < listaResultados.Count; i++)
                     {
                         //Console.WriteLine(i + " - " + listaResultados[i].NomeConta + " - " + listaResultados[i].TempoIdeal + " - " + listaResultados[i].TempoReal);                
-                        Console.WriteLine(i + " - " + listaResultados[i]);
+                        Console.WriteLine("Conta " + (i + 1) + " - " + listaResultados[i]);
                     }
                     //Environment: Encerra o processo "decisaoDeContinuar" e retorna um código de saída para o sistema operacional.
                     Environment.Exit(decisaoDeContinuar);
