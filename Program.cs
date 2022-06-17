@@ -42,8 +42,9 @@ namespace Udemy_Console
 
             if (decisaoDeIniciar == 1)
             {
-                Console.WriteLine("Que legal!");
-                Thread.Sleep(1000);
+                Console.WriteLine("Que legal!");              
+                Thread.Sleep(500);
+                Console.Clear();
                 MyClass.ChamarMetodos(listaResultados);
             }
             else
@@ -78,6 +79,7 @@ namespace Udemy_Console
 
             do
             {
+                //Valida recebeOpcao
 
                 if (recebeOpcao == 1)
                 {
@@ -99,15 +101,18 @@ namespace Udemy_Console
                     valor = MyClass.DividirNumeros(valor1, valor2);
                     mensagem = "A divisão de " + valor1 + " / " + valor2 + " é igual a " + (valor);
                 }
-                if (recebeOpcao <= 0 || recebeOpcao > 4)
+                else
                 {
-                    mensagem = recebeOpcao + " é uma opção inválida!";
+                   Console.WriteLine(recebeOpcao + " é uma opção inválida!");
                 }
 
-                Console.WriteLine(mensagem);
-                listaResultados.Add(mensagem);
-
-
+                //Valida mensagem
+                if (mensagem != "")
+                {
+                    Console.WriteLine(mensagem);
+                    listaResultados.Add(mensagem);
+                }
+                 
                 Console.WriteLine("__________________________________________");
 
                 Console.WriteLine("Vamos continuar brincando?");
