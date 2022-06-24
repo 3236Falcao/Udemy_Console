@@ -5,23 +5,9 @@ using System.Linq;
 using System.Threading;
 
 namespace Udemy_Console
-{
-    //Criação de variavel global
-    //Instancia a variavel global
-
-    //public static class Global
-    //{
-    //    public static List<string> listaResultados = new List<string>();
-    //}
+{    
     public class Program
-    {
-        //private readonly CalculoService _CalculoService;
-
-        //public Program(CalculoService calculoService)
-        //{
-        //    _CalculoService = calculoService;
-        //}
-
+    {      
         public static void Main()
         {
 
@@ -57,21 +43,23 @@ namespace Udemy_Console
         public void ChamarMetodos(List<string> listaResultados)
         {
 
-            Console.Clear();            
+            Console.Clear();
             string mensagem = "";
             int valor = 0;
-            int recebeOpcao = 0;            
+            int recebeOpcao = 0;
             var MyClass = new Program();
-            //Console.WriteLine("Conta " + (i + 1) + " - " + "Digite dois numeros");
+
             //Adicionado contador
             Console.WriteLine("conta " + (listaResultados.Count + 1));
             Console.WriteLine("Digite dois numeros");
+            //como validar se o valor chegar vazio???
+
+            //int valor1 = (Console.ReadLine().Trim() == "" ? "Digite um valor válido." : int.Parse(Console.ReadLine());
+            //string valor1 = (Console.ReadLine().Trim() == "" ? "Digite um valor válido." : valor1.int.Parse(Console.ReadLine()));
+
             int valor1 = int.Parse(Console.ReadLine());
             int valor2 = int.Parse(Console.ReadLine());
 
-            
-
-            Console.WriteLine("Você digitou " + valor1 + " e " + valor2);
             Console.WriteLine("__________________________________________");
             Console.WriteLine("Escolha uma opção:");
             Console.WriteLine("1 - Somar");
@@ -107,7 +95,7 @@ namespace Udemy_Console
                 }
                 else
                 {
-                   Console.WriteLine(recebeOpcao + " é uma opção inválida!");
+                    Console.WriteLine(recebeOpcao + " é uma opção inválida!");
                 }
 
                 //Valida mensagem
@@ -115,7 +103,7 @@ namespace Udemy_Console
                 {
                     Console.WriteLine(mensagem);
                     listaResultados.Add(mensagem);
-                }               
+                }
 
                 Console.WriteLine("__________________________________________");
 
@@ -136,7 +124,7 @@ namespace Udemy_Console
                     ChamarMetodos(listaResultados);
                 }
                 else
-                {                                        
+                {
                     Console.WriteLine("__________________________________________");
                     Console.WriteLine("Que pena , então vamos deixar para a próxima.");
                     Console.WriteLine("__________________________________________");
@@ -156,30 +144,5 @@ namespace Udemy_Console
 
             } while (recebeOpcao >= 1 || recebeOpcao <= 4);
         }
-
-        public int SomarNumeros(int numero1, int numero2)
-        {
-            var resultadoSoma = (numero1 + numero2);
-            return resultadoSoma;
-        }
-
-        public int SubtrairNumeros(int numero1, int numero2)
-        {
-            var resultadoSubtracao = (numero1 - numero2);
-            return resultadoSubtracao;
-        }
-
-        public int MultiplicarNumeros(int numero1, int numero2)
-        {
-            var resultadoMultiplicao = (numero1 * numero2);
-            return resultadoMultiplicao;
-        }
-
-        public int DividirNumeros(int numero1, int numero2)
-        {
-            var resultadoDivisao = (numero1 / numero2);
-            return resultadoDivisao;
-        }
-
     }
 }
