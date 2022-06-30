@@ -42,32 +42,32 @@ namespace Udemy_Console
 
        
 
-            public int SomarNumeros(int numero1, int numero2)
-            {
-                var resultadoSoma = (numero1 + numero2);
-                return resultadoSoma;
-            }
+        public int SomarNumeros(int numero1, int numero2)
+        {
+            var resultadoSoma = (numero1 + numero2);
+            return resultadoSoma;
+        }
 
-            public int SubtrairNumeros(int numero1, int numero2)
-            {
-                var resultadoSubtracao = (numero1 - numero2);
-                return resultadoSubtracao;
-            }
+        public int SubtrairNumeros(int numero1, int numero2)
+        {
+            var resultadoSubtracao = (numero1 - numero2);
+            return resultadoSubtracao;
+        }
 
-            public int MultiplicarNumeros(int numero1, int numero2)
-            {
-                var resultadoMultiplicao = (numero1 * numero2);
-                return resultadoMultiplicao;
-            }
+        public int MultiplicarNumeros(int numero1, int numero2)
+        {
+            var resultadoMultiplicao = (numero1 * numero2);
+            return resultadoMultiplicao;
+        }
 
-            public int DividirNumeros(int numero1, int numero2)
-            {
-                var resultadoDivisao = (numero1 / numero2);
-                return resultadoDivisao;
-            }
+        public int DividirNumeros(int numero1, int numero2)
+        {
+            var resultadoDivisao = (numero1 / numero2);
+            return resultadoDivisao;
+        }
 
-            public void ChamarMetodos(List<string> listaResultados)
-            {
+        public void ChamarMetodos(List<string> listaResultados)
+        {
 
             Console.Clear();
             string mensagem = "";
@@ -169,8 +169,6 @@ namespace Udemy_Console
                 ChamarMetodos(listaResultados);
 
             } while (recebeOpcao >= 1 || recebeOpcao <= 4);
-        }
-
-
+        }   
     }
 }
